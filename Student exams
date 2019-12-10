@@ -1,0 +1,32 @@
+//Importing a scanner so we can obtain user input
+Scanner scanner = new Scanner(System.in);
+         //Asking how many points are a pass so it knows what is a passing score
+            System.out.println("how many points is a pass?: ");
+            int points = scanner.nextInt();
+         //Also asking how many students are in the exam so it knows how many students have partaked in the exam
+            System.out.println("how many students too the exam?: ");
+            int Students = scanner.nextInt();
+          //declaring the array
+            int[] scores = new int[Students];
+           // asking for their score so it can pair the student with the test score
+            System.out.println("Enter each students score. ");
+            for (int i = 0; i < scores.length;i++) {
+                System.out.println("Student " + (i + 1) + ": ");
+                scores[i] = scanner.nextInt();
+            }
+            System.out.println("\n--- Statistics ---");
+             //finding out and printing the students percentage on the exam
+            int sum = 0;
+            for (int i = 0; i < scores.length; i++) {
+                double studentScore = scores[i];
+                double studentPercentage = ((double)scores[i] / points) * 100;
+                System.out.println("Student " + (i + 1) + ": " + studentScore + "/" + points + " (" + studentPercentage + "%)");
+                sum += studentScore;
+            }
+        //finding out and printing the students mean number on the exam
+            double mean = (double)sum / scores.length;
+            double meanPercentage = (mean / points) * 100;
+            System.out.println("Mean: " + mean + "/" + points + " (" + meanPercentage + "%)");
+
+            }
+        }
